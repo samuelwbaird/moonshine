@@ -167,7 +167,7 @@ function compile (filename, switches, callback) {
 		}
 
 		callback(fs.readFileSync(luacFilename, 'binary').toString());
-		fs.unlink(luacFilename);
+		fs.unlinkSync(luacFilename);
 	});
 }
 

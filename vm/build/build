@@ -165,7 +165,7 @@ function minifyLibrary () {
 		appendFile(output, filename);
 
 		fs.closeSync(output);
-		fs.unlink(filename);
+		fs.unlinkSync(filename);
 
 		console.log('File written: ' + MINIFIED_OUTPUT_FILENAME);
 		if (switches['-module']) buildModule();
@@ -190,7 +190,7 @@ function buildSWC () {
 
 	exec(cmd, function (err) {
 		if (err) throw err;
-		fs.unlink(filename);
+		fs.unlinkSync(filename);
 
 		console.log('File written: ' + SWC_OUTPUT_FILENAME);
 	});
